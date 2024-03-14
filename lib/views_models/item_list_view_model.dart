@@ -1,8 +1,8 @@
-import 'package:flutter_mvvm/models/model.dart';
+import 'package:flutter_mvvm/models/item_list_model.dart';
 
 
 class ItemListViewModel {
-  final ItemList _itemList = ItemList();
+  final ItemListModel _itemList = ItemListModel();
 
   List<String> get items => _itemList.items; 
 

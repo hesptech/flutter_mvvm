@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../views_models/viewmodel.dart';
+import '../views_models/item_list_view_model.dart';
 //import 'package:flutter_mvvm/models/model.dart';
 
 
@@ -22,7 +22,10 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('MVVM Example')),
+      appBar: AppBar(
+        title: const Text('MVVM Architecture'),
+        centerTitle: true,
+      ),  
       body: ListView.builder(
         itemCount: _viewModel.items.length,
         itemBuilder: (context, index) {
