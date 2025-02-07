@@ -35,11 +35,21 @@ class HomePageState extends State<HomePage> {
           return ListTile(title: Text(_viewModel.items[index]));
         },
       ), */
-      body: ListView.builder(
-        itemCount: _cityListViewModel2.cities.length, 
-        itemBuilder: (context, index) {
-          return ListTile(title: Text(_cityListViewModel2.cities[index]));
-        },
+      body: Column(
+        children: [
+          Flexible(
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              itemCount: _cityListViewModel2.cities.length, 
+              itemBuilder: (context, index) {
+                return ListTile(title: Text(_cityListViewModel2.cities[index]));
+              },
+            ),
+          ),
+          const Text('data')
+
+        ],
       ),
 
 
