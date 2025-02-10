@@ -9,6 +9,6 @@ class CityListViewModel  {
 
   void addCity({required String city, required String country}) {
     citiesRepository.cities.add(CityModel(name: city, country: country));
-    print(citiesRepository.cities[3].name);
+    //print(citiesRepository.cities[3].name);
   }
 }

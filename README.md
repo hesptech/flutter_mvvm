@@ -1,5 +1,10 @@
 # flutter_mvvm
 
+
+ 
+
+----------------------------------
+
 Software architecture is the set of decisions that we make before we start coding and that will be hard to change after.
 
 MVVM Architectural pattern

@@ -7,7 +7,7 @@ class WeatherViewModel extends ChangeNotifier {
 
   Future<void> fetchWeather() async {
     await Future.delayed(const Duration(seconds: 6));
-    print('---------------------------------');
+    //print('---------------------------------');
     _weather = WeatherModel(temperature: '30°C', condition: 'Sunny');
     notifyListeners();
   }
