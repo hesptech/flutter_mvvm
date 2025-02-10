@@ -37,6 +37,18 @@ class HomePageState extends State<HomePage> {
       ), */
       body: Column(
         children: [
+          Container(
+            height: 200,
+            color: const Color.fromARGB(255, 226, 114, 106),
+            child: ListView.builder(
+              //scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: _viewModel.items.length,
+              itemBuilder: (context, index) {
+                return ListTile(title: Text(_viewModel.items[index]));
+              },
+            ),
+          ),
           Flexible(
             child: ListView.builder(
               scrollDirection: Axis.vertical,
@@ -53,7 +65,34 @@ class HomePageState extends State<HomePage> {
       ),
 
 
-
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              _viewModel.addItem('New Item');
+              setState(() {});
+            },
+            heroTag: null,
+            child: const Icon(
+              Icons.add_card
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          FloatingActionButton(           
+            onPressed: () {
+              _cityListViewModel2.addCity(city: 'New City', country: 'New Country');
+              setState(() {});
+            },
+            heroTag: null,           
+            child: const Icon(
+              Icons.location_city
+            ),
+          )
+        ]
+      ),
 
       /* floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -63,13 +102,13 @@ class HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
       ), */
 
-      floatingActionButton: FloatingActionButton(
+      /* floatingActionButton: FloatingActionButton(
         onPressed: () {
           _cityListViewModel2.addCity(city: 'New City', country: 'New Country');
           setState(() {});
         },
         child: const Icon(Icons.add),
-      ),
+      ), */
     );
   }
 }

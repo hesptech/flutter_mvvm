@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/models/services/service_locator.dart';
-import 'package:flutter_mvvm/views/home_page.dart';
-import 'package:flutter_mvvm/views/joke_screen.dart';
+import 'package:flutter_mvvm/views/list_views_screen.dart';
+import 'package:flutter_mvvm/views/jokes/joke_screen.dart';
 import 'package:flutter_mvvm/views/weather_screen.dart';
 
 void main() {
@@ -18,9 +18,9 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          //child: HomePage(),
+          child: HomePage(),
           //child: WeatherScreen(),
-          child: JokeScreen(),
+          //child: JokeScreen(),
         ),
       ),
     );

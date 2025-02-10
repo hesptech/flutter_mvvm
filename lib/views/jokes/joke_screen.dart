@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm/views/joke_view.dart';
+import 'package:flutter_mvvm/views/jokes/joke_view.dart';
 
 final class JokeScreen extends StatelessWidget {
   const JokeScreen({super.key});
