@@ -4,14 +4,14 @@ import 'package:flutter_mvvm/views_models/city_list_view_model.dart';
 //import 'package:flutter_mvvm/models/model.dart';
 
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ListViewScreen extends StatefulWidget {
+  const ListViewScreen({super.key});
 
   @override
-  HomePageState createState() => HomePageState();
+  ListViewScreenState createState() => ListViewScreenState();
 }
 
-class HomePageState extends State<HomePage> {
+class ListViewScreenState extends State<ListViewScreen> {
   late ItemListViewModel _viewModel;
   late CityListViewModel _cityListViewModel2;
 
@@ -26,7 +26,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MVVM Architecture'),
+        title: const Text('MVVM Layer Architecture'),
         centerTitle: true,
       ),  
       /* body: ListView.builder(

@@ -1,7 +1,33 @@
 # flutter_mvvm
 
+MVVM by Layers
 
- 
+LISTVIEW
+* ui: double ListView, double FloatingActionButton
+- items
+     data source: class model array
+     logic: get, "add" method into array
+- cities
+     model: class model
+     data source: list of maps(objects) in repository 
+     logic: get, add method of map into array
+     
+https://medium.com/@DevMonarch/implementing-model-view-viewmodel-mvvm-in-a-flutter-app-a-step-by-step-guide-92b05e6e8192
+
+WEATHER
+     data source: class model returns decoded internal json
+     logic: ChangeNotifier, notifyListeners, get, delayed future fake request
+     ui: ChangeNotifierProvider, Provider Consumer, fetch logic Future notifyListeners
+
+https://medium.com/codeinflutter/flutter-mvvm-architecture-a-simple-guide-for-developers-9b35bca62d0e
+
+JOKES
+     data source: class model, interface fetch, service locator singleton, network request Dio
+     logic: ChangeNotifier, interface, Future notifyListeners loading
+     ui: Navigator to view page, service locator, ListenableBuilder
+
+https://medium.com/easy-flutter/flutter-state-management-without-package-4865ad55d591
+
 
 ----------------------------------
 

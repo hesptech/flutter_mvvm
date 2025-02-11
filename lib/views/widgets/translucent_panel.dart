@@ -20,9 +20,9 @@ final class TranslucentPanel extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
-          Colors.white,
-          Colors.white.withOpacity(0.9),
-          Colors.white,
+          //Colors.white,
+          Colors.white.withOpacity(0.2),
+          //Colors.white,
           Colors.white.withOpacity(0.8),
         ]),
         border: Border.all(

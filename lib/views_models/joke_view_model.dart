@@ -12,7 +12,7 @@ class JokeViewModel with ChangeNotifier {
   Future<String?> fetchJoke() async {
     String? error;
     isLoading = true;
-    notifyListeners();
+    //notifyListeners();
     JokeModel jokeModel = await jokeService.fetchJoke();
     if (jokeModel.joke != null) {
       joke = jokeModel.joke!;

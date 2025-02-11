@@ -9,8 +9,10 @@ class JokeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     bool firstBuild = true;
     final jokeViewModel = sL<JokeViewModel>();
+    
     return Scaffold(
       body: GradientBackground(
         colors: const [Colors.black, Colors.blue, Colors.black, Colors.purple],

@@ -18,9 +18,9 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: HomePage(),
+          //child: ListViewScreen(),
           //child: WeatherScreen(),
-          //child: JokeScreen(),
+          child: JokeScreen(),
         ),
       ),
     );
