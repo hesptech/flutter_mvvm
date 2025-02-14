@@ -26,8 +26,12 @@ class ListViewScreenState extends State<ListViewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MVVM Layer Architecture'),
-        centerTitle: true,
+        title: const Text(
+          'Logic:\nModel object Class methods \nUI:\nsetState', 
+          style: TextStyle(fontSize: 20),
+        ),
+        toolbarHeight: 150,
+        backgroundColor: Colors.grey[500],
       ),  
       /* body: ListView.builder(
         itemCount: _viewModel.items.length,

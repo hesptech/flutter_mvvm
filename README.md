@@ -3,6 +3,7 @@
 MVVM by Layers
 
 LISTVIEW
+* setState
 * ui: double ListView, double FloatingActionButton
 - items
      data source: class model array
@@ -15,6 +16,7 @@ LISTVIEW
 https://medium.com/@DevMonarch/implementing-model-view-viewmodel-mvvm-in-a-flutter-app-a-step-by-step-guide-92b05e6e8192
 
 WEATHER
+* state management with Provider (ChangeNotifierProvider create: .... , Consumer)
      data source: class model returns decoded internal json
      logic: ChangeNotifier, notifyListeners, get, delayed future fake request
      ui: ChangeNotifierProvider, Provider Consumer, fetch logic Future notifyListeners
@@ -22,11 +24,15 @@ WEATHER
 https://medium.com/codeinflutter/flutter-mvvm-architecture-a-simple-guide-for-developers-9b35bca62d0e
 
 JOKES
+* State Management without package (ListenableBuilder)
      data source: class model, interface fetch, service locator singleton, network request Dio
      logic: ChangeNotifier, interface, Future notifyListeners loading
      ui: Navigator to view page, service locator, ListenableBuilder
 
+no package...
 https://medium.com/easy-flutter/flutter-state-management-without-package-4865ad55d591
+with Provider....
+https://medium.com/easy-flutter/flutter-dependency-and-state-management-with-provider-13967c37bd71
 
 
 ----------------------------------

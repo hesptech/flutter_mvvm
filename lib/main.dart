@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/models/services/service_locator.dart';
-import 'package:flutter_mvvm/views/list_views_screen.dart';
-import 'package:flutter_mvvm/views/jokes/joke_screen.dart';
-import 'package:flutter_mvvm/views/weather_screen.dart';
+import 'package:flutter_mvvm/views/custom_bottom_navigation.dart';
 
 void main() {
   ServiceLocator.createInstances();
@@ -14,15 +12,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          //child: ListViewScreen(),
-          //child: WeatherScreen(),
-          child: JokeScreen(),
-        ),
-      ),
+      theme: ThemeData(useMaterial3: true),
+      home: const CustomBottomNavigation(),
     );
   }
 }

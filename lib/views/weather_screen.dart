@@ -5,19 +5,26 @@ import 'package:flutter_mvvm/views_models/weather_viewmodel.dart';
  class WeatherScreen extends StatelessWidget {
   final WeatherViewModel weatherViewModel = WeatherViewModel();
   
-
   WeatherScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    weatherViewModel.fetchWeather();
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Weather App')),
+      appBar: AppBar(
+        title: const Text(
+          'Logic:\nChangeNotifier notifyListeners\nUI:\nProvider ChangeNotifierProvider\nConsumer', 
+          style: TextStyle(fontSize: 20),
+        ),
+        toolbarHeight: 200,
+        backgroundColor: Colors.grey[500],
+      ),
       body: ChangeNotifierProvider(
         create: (_) => weatherViewModel,
         child: Consumer<WeatherViewModel>(
           builder: (context, model, child) {
-
-            weatherViewModel.fetchWeather();
             
             if (model.weather == null) {
               return const Center(child: CircularProgressIndicator());
