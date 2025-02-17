@@ -28,24 +28,17 @@ class ListViewScreenState extends State<ListViewScreen> {
       appBar: AppBar(
         title: const Text(
           'Logic:\nModel object Class methods \nUI:\nsetState', 
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 18),
         ),
         toolbarHeight: 150,
         backgroundColor: Colors.grey[500],
       ),  
-      /* body: ListView.builder(
-        itemCount: _viewModel.items.length,
-        itemBuilder: (context, index) {
-          return ListTile(title: Text(_viewModel.items[index]));
-        },
-      ), */
       body: Column(
         children: [
           Container(
             height: 200,
             color: const Color.fromARGB(255, 226, 114, 106),
             child: ListView.builder(
-              //scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               itemCount: _viewModel.items.length,
               itemBuilder: (context, index) {
@@ -98,21 +91,6 @@ class ListViewScreenState extends State<ListViewScreen> {
         ]
       ),
 
-      /* floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _viewModel.addItem('New Item');
-          setState(() {});
-        },
-        child: const Icon(Icons.add),
-      ), */
-
-      /* floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _cityListViewModel2.addCity(city: 'New City', country: 'New Country');
-          setState(() {});
-        },
-        child: const Icon(Icons.add),
-      ), */
     );
   }
 }

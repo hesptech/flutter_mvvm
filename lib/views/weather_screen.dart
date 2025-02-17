@@ -16,16 +16,17 @@ import 'package:flutter_mvvm/views_models/weather_viewmodel.dart';
       appBar: AppBar(
         title: const Text(
           'Logic:\nChangeNotifier notifyListeners\nUI:\nProvider ChangeNotifierProvider\nConsumer', 
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 18),
         ),
         toolbarHeight: 200,
         backgroundColor: Colors.grey[500],
       ),
       body: ChangeNotifierProvider(
         create: (_) => weatherViewModel,
+
+
         child: Consumer<WeatherViewModel>(
           builder: (context, model, child) {
-            
             if (model.weather == null) {
               return const Center(child: CircularProgressIndicator());
             }
@@ -40,6 +41,8 @@ import 'package:flutter_mvvm/views_models/weather_viewmodel.dart';
             );
           },
         ),
+
+        
       ),
     );
   }

@@ -7,6 +7,14 @@ final class JokeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'abstract interface Class\nService Locator get_it dio\nLogic:\nChangeNotifier notifyListeners\nUI:\nListenableBuilder\nsL Service Locator', 
+          style: TextStyle(fontSize: 18),
+        ),
+        toolbarHeight: 250,
+        backgroundColor: Colors.grey[500],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

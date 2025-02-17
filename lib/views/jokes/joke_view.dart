@@ -31,33 +31,38 @@ class JokeView extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
+
+
                           child: ListenableBuilder(
-                              listenable: jokeViewModel,
-                              builder: (context, child) {
-                                if (jokeViewModel.isLoading) {
-                                  return const CircularProgressIndicator();
-                                } else {
-                                  if (firstBuild) {
-                                    jokeViewModel.fetchJoke().then((error) {
-                                      if (error != null) {
-                                        WidgetsBinding.instance
-                                            .addPostFrameCallback((_) {
-                                          _showSnackbar(context, error);
-                                        });
-                                      }
-                                    });
-                                    firstBuild = false;
-                                  }
-                                  return SingleChildScrollView(
-                                    child: Text(
-                                      jokeViewModel.joke,
-                                      style: const TextStyle(
-                                          fontSize: 24, color: Colors.black),
-                                      textAlign: TextAlign.left,
-                                    ),
-                                  );
+                            listenable: jokeViewModel,
+                            builder: (context, child) {
+                              if (jokeViewModel.isLoading) {
+                                return const CircularProgressIndicator();
+                              } else {
+                                if (firstBuild) {
+                                  jokeViewModel.fetchJoke().then((error) {
+                                    if (error != null) {
+                                      WidgetsBinding.instance
+                                          .addPostFrameCallback((_) {
+                                        _showSnackbar(context, error);
+                                      });
+                                    }
+                                  });
+                                  firstBuild = false;
                                 }
-                              }),
+                                return SingleChildScrollView(
+                                  child: Text(
+                                    jokeViewModel.joke,
+                                    style: const TextStyle(
+                                        fontSize: 24, color: Colors.black),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+
+
                         ),
                       ),
                     ),
@@ -83,7 +88,7 @@ class JokeView extends StatelessWidget {
                           ),
                         ),
                         child:
-                            const Text('Next Joke', style: TextStyle(fontSize: 24, color: Colors.black)),
+                          const Text('Next Joke', style: TextStyle(fontSize: 24, color: Colors.black)),
                       ),
                     ),
                   ],

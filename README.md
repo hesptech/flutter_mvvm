@@ -1,6 +1,7 @@
 # flutter_mvvm
 
 MVVM by Layers
+--------------
 
 LISTVIEW
 * setState
@@ -40,7 +41,8 @@ https://medium.com/easy-flutter/flutter-dependency-and-state-management-with-pro
 Software architecture is the set of decisions that we make before we start coding and that will be hard to change after.
 
 MVVM Architectural pattern
-Separation of Concerns, testability, reusability, scalability and Maintenance
+Single Responsibility and Separation of Concerns, 
+testability, reusability, scalability and Maintenance
 understand, test, and evolve
 flexibility and reusability of code and the ability to test each component independently.
 more maintainable, larger projects or planning long-term development, Easy State Management, Clean Codebase
@@ -139,3 +141,20 @@ https://medium.com/@Victor.Ahmad/implementing-model-view-viewmodel-mvvm-in-a-flu
 maintainable and testable user interfaces
 separation of concerns: allows for a more testable and maintainable codebase
 loosely coupled architecture: greater flexibility and reusability of code
+
+-------------------------------------
+should help with....
+
+Keep code organized
+Make it easier to add new features
+Fix bugs faster
+Work in teams easily
+
+-------------------------------------
+some  types of Architecture...
+
+MVC (Model-View-Controller)
+MVVM (Model-View-ViewModel)
+Bloc Architecture
+Clean Architecture
+Riverpod Architecture
