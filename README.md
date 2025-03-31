@@ -25,6 +25,8 @@ WEATHER
 https://medium.com/codeinflutter/flutter-mvvm-architecture-a-simple-guide-for-developers-9b35bca62d0e
 
 JOKES
+https://medium.com/easy-flutter/is-mvvm-the-best-architecture-pattern-for-flutter-6c29f49e1a71
+https://github.com/bigbott/getx_joke/tree/main/lib
 * State Management without package (ListenableBuilder)
      data source: class model, interface fetch, service locator singleton, network request Dio
      logic: ChangeNotifier, interface, Future notifyListeners loading
@@ -158,3 +160,8 @@ MVVM (Model-View-ViewModel)
 Bloc Architecture
 Clean Architecture
 Riverpod Architecture
+
+
+
+compass_app - A sample application that implements MVVM architecture.
+https://github.com/flutter/samples/tree/main/compass_app

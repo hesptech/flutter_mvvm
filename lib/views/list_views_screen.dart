@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import '../views_models/item_list_view_model.dart';
-import 'package:flutter_mvvm/views_models/city_list_view_model.dart';
-//import 'package:flutter_mvvm/models/model.dart';
-
+import 'package:flutter_mvvm/views/list_views_view.dart';
 
 class ListViewScreen extends StatefulWidget {
   const ListViewScreen({super.key});
@@ -12,85 +9,78 @@ class ListViewScreen extends StatefulWidget {
 }
 
 class ListViewScreenState extends State<ListViewScreen> {
-  late ItemListViewModel _viewModel;
-  late CityListViewModel _cityListViewModel2;
-
-  @override
-  void initState() {
-    super.initState();
-    _viewModel = ItemListViewModel();
-    _cityListViewModel2 = CityListViewModel();
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Logic:\nModel object Class methods \nUI:\nsetState', 
-          style: TextStyle(fontSize: 18),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Column(
+            children: [
+              Text(
+                'Logic:\nModel object Class methods \nUI:\nsetState', 
+                style: TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
+          toolbarHeight: 200,
+          backgroundColor: Colors.grey[500],
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'List View', icon: Icon(Icons.abc),),
+              Tab(text: 'Tab 2', icon: Icon(Icons.abc),),
+              Tab(text: 'Tab 3', icon: Icon(Icons.abc),),
+            ],
+          ),
+        ),  
+        //body: const ListViewsView(),
+        body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
+          viewportFraction: 0.9,
+          children: [
+            const ListViewsView(),
+            Container(
+              color: Colors.blue,
+              //width: MediaQuery.of(context).size.width / 3,
+            ),
+            Container(
+              color: Colors.red,
+              //width: MediaQuery.of(context).size.width / 3,
+            ),
+          ],
         ),
-        toolbarHeight: 150,
-        backgroundColor: Colors.grey[500],
-      ),  
-      body: Column(
-        children: [
-          Container(
-            height: 200,
-            color: const Color.fromARGB(255, 226, 114, 106),
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: _viewModel.items.length,
-              itemBuilder: (context, index) {
-                return ListTile(title: Text(_viewModel.items[index]));
+      
+        /* floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                _viewModel.addItem('New Item');
+                setState(() {});
               },
+              heroTag: null,
+              child: const Icon(
+                Icons.add_card
+              ),
             ),
-          ),
-          Flexible(
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemCount: _cityListViewModel2.cities.length, 
-              itemBuilder: (context, index) {
-                return ListTile(title: Text(_cityListViewModel2.cities[index]));
+            const SizedBox(
+              height: 10,
+            ),
+            FloatingActionButton(           
+              onPressed: () {
+                _cityListViewModel2.addCity(city: 'New City', country: 'New Country');
+                setState(() {});
               },
-            ),
-          ),
-          const Text('data')
-
-        ],
+              heroTag: null,           
+              child: const Icon(
+                Icons.location_city
+              ),
+            )
+          ]
+        ), */
+      
       ),
-
-
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              _viewModel.addItem('New Item');
-              setState(() {});
-            },
-            heroTag: null,
-            child: const Icon(
-              Icons.add_card
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          FloatingActionButton(           
-            onPressed: () {
-              _cityListViewModel2.addCity(city: 'New City', country: 'New Country');
-              setState(() {});
-            },
-            heroTag: null,           
-            child: const Icon(
-              Icons.location_city
-            ),
-          )
-        ]
-      ),
-
     );
   }
 }

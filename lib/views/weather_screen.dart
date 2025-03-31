@@ -12,37 +12,48 @@ import 'package:flutter_mvvm/views_models/weather_viewmodel.dart';
 
     weatherViewModel.fetchWeather();
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Logic:\nChangeNotifier notifyListeners\nUI:\nProvider ChangeNotifierProvider\nConsumer', 
-          style: TextStyle(fontSize: 18),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Logic:\nChangeNotifier notifyListeners\nUI:\nProvider ChangeNotifierProvider\nConsumer', 
+            style: TextStyle(fontSize: 18),
+          ),
+          toolbarHeight: 200,
+          backgroundColor: Colors.grey[500],
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'Weather', icon: Icon(Icons.abc),),
+              Tab(text: 'Tab 4', icon: Icon(Icons.abc),),
+              Tab(text: 'Tab 3', icon: Icon(Icons.abc),),
+            ],
+          ),
         ),
-        toolbarHeight: 200,
-        backgroundColor: Colors.grey[500],
-      ),
-      body: ChangeNotifierProvider(
-        create: (_) => weatherViewModel,
-
-
-        child: Consumer<WeatherViewModel>(
-          builder: (context, model, child) {
-            if (model.weather == null) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Temperature: ${model.weather!.temperature}'),
-                  Text('Condition: ${model.weather!.condition}'),
-                ],
+        body: TabBarView(
+          children: [
+            ChangeNotifierProvider(
+              create: (_) => weatherViewModel,
+              child: Consumer<WeatherViewModel>(
+                builder: (context, model, child) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Temperature: ${model.weather!.temperature}'),
+                        Text('Condition: ${model.weather!.condition}'),
+                      ],
+                    ),
+                  );
+                },
               ),
-            );
-          },
+            ),
+            const SizedBox(),
+            const SizedBox(),
+          ],
+    
+          
         ),
-
-        
       ),
     );
   }
