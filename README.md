@@ -165,3 +165,30 @@ Riverpod Architecture
 
 compass_app - A sample application that implements MVVM architecture.
 https://github.com/flutter/samples/tree/main/compass_app
+
+-------------------------------------
+
+MEDIUM
+The Flutter Architecture That Saved Our Team 6 Months of Rework
+The Definitive Guide to our MVVM Architecture in Flutter
+LINKS:
+https://github.com/alirezarezvani/flutter/tree/master/examples
+
+• Use Cases only exist where there’s genuine multi-repository complexity
+
+• good architecture isn’t about following patterns perfectly – it’s about creating a structure that makes common tasks easy and complex tasks possible.
+
+• Views that only render, ViewModels that only coordinate, Repositories that handle business logic, and Services that integrate with external systems
+
+---------------------------------------
+
+Flutter. Architectural glossary
+Repository, DataSource, UseCase, State, Model, and other beautiful terms.
+https://medium.com/easy-flutter/flutter-architectural-glossary-28ad119fad8f
+
+
+----------------------------------------
+
+ValueNotifier VS ChangeNotifier
+Flutter ValueNotifier and ChangeNotifier Difference | State Management
+https://www.youtube.com/watch?v=PmkUCAYdrtk&t=377s
